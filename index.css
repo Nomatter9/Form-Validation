@@ -1,0 +1,40 @@
+body{
+    background-image: url(https://images.pexels.com/photos/15260402/pexels-photo-15260402/free-photo-of-blue-swirls-on-a-dark-background.jpeg?auto=compress&cs=tinysrgb&w=600);
+}
+.container {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #555;
+  }
+  
+  input[type="text"], input[type="tel"], input[type="password"], #btn{
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; 
+    margin-top: 5px;
+  }
+  input::placeholder {
+    font-style: italic;
+    color: #aaa;
+  }
+  
+  
+  
