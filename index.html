@@ -12,18 +12,23 @@
         <form id="form">
          <p> <label for="firstName">First Name</label>
           <input type="text" name="firstName" id="firstName" placeholder="Name" required>
+          <span id="firstNameError" class="error-message"></span>
         </p>
         <p>  <label for="lastName">Last Name</label>
           <input type="text" name="lastName" id="lastName" placeholder="Surname" required>
+          <span id="lastNameError" class="error-message"></span>
         </p>
         <p>  <label for="phone">Phone</label>
             <input type="tel" name="phone" id="phone" placeholder="+2777-555-6666" required>
+            <span id="phoneError" class="error-message"></span>
           </p>
         <p>  <label for="email">Email</label>
             <input type="text" name="email" id="email" placeholder="Email" required>
+            <span id="emailError" class="error-message"></span>
           </p>
           <p>  <label for="password">Password</label>
             <input type="password" name="password" id="password" placeholder="Your Secret" required>
+            <span id="passwordError" class="error-message"></span>
           </p>
           <p> 
            <button id="btn"> Submit</button>

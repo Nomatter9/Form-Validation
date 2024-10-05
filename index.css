@@ -35,6 +35,11 @@ body{
     font-style: italic;
     color: #aaa;
   }
+  .error-message {
+    color: red;
+    font-size: 12px;
+    font-family: 'arial';
+}
   
   
   

@@ -5,20 +5,54 @@ let phone = document.getElementById("phone");
 let email = document.getElementById("email");
 let password = document.getElementById("password");
 let button = document.getElementById("btn");
+let firstNameError =document.getElementById("firstNameError");
+let lastNameError =document.getElementById("lastNameError");
+let phoneError =document.getElementById("phoneError");
+let emailError =document.getElementById("emailError");
+let passwordeError =document.getElementById("passwordError")
 
 function formValidation(){
-   if(firstName.value == "" || lastName.value == "" || phone.value == "" || email.value == "" || password.value == ""){
-    return "validation failed:  all fields are required";
-   } else {
-    return "validation successful";
+    let isValid  = true;
+    firstNameError.textContent = "";
+    lastNameError.textContent = "";
+    phoneError.textContent = "";
+    emailError.textContent = "";
+    passwordError.textContent = "";
+
+   if(firstName.value == ""){
+
+    firstNameError.textContent = "FirstName required "
+    isValid = false;
+   } 
+   if( lastName.value == ""){ 
+
+    lastNameError.textContent = "LastName required "
+    isValid = false;
+   }
+   if( phone.value == "" ){
+    phoneError.textContent = "Phone required "
+    isValid = false;
+
+   }
+   if( email.value == "" ){
+    emailError.textContent = "Email required "
+    isValid = false;
+
+   }
+   if( password.value == ""){
+    passwordError.textContent = "Password required "
+    isValid = false;
+
+   }else{
+   return isValid
    }
 }
 button.addEventListener("click", function(event){
     event.preventDefault();
-    let validationMessage = formValidation();
-    alert(validationMessage);
+   
 
-   if (validationMessage === "validation successful"){
+   if (formValidation()){
+    alert("Form Submitted")
     form.reset();
 }
 });
