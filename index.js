@@ -47,13 +47,33 @@ function formValidation(){
    return isValid
    }
 }
+function showSnackbar(message) {
+    let snackbar = document.getElementById("snackbar");
+    snackbar.textContent = message;
+    snackbar.className = "show"; 
+  
+    setTimeout(function() {
+        snackbar.className = snackbar.className.replace("show", "");
+        firstNameError.textContent = "";
+    lastNameError.textContent = "";
+    phoneError.textContent = "";
+    emailError.textContent = "";
+    passwordError.textContent = "";
+    
+    }, 3000);
+}
 button.addEventListener("click", function(event){
     event.preventDefault();
    
 
-   if (formValidation()){
-    alert("Form Submitted")
-    form.reset();
-}
+    if (formValidation()) {
+        showSnackbar("Form Submitted Successfully!"); 
+       
+    } else {
+        showSnackbar("Please fill out all fields!"); 
+       
+    }
+    
+    form.reset(); 
 });
  
