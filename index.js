@@ -13,12 +13,6 @@ let passwordeError =document.getElementById("passwordError")
 
 function formValidation(){
     let isValid  = true;
-    firstNameError.textContent = "";
-    lastNameError.textContent = "";
-    phoneError.textContent = "";
-    emailError.textContent = "";
-    passwordError.textContent = "";
-
    if(firstName.value == ""){
 
     firstNameError.textContent = "FirstName required "
@@ -53,8 +47,8 @@ function showSnackbar(message) {
     snackbar.className = "show"; 
   
     setTimeout(function() {
-        snackbar.className = snackbar.className.replace("show", "");
-        firstNameError.textContent = "";
+     snackbar.className = snackbar.className.replace("show", "");
+    firstNameError.textContent = "";
     lastNameError.textContent = "";
     phoneError.textContent = "";
     emailError.textContent = "";
