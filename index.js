@@ -44,15 +44,26 @@ function formValidation() {
     return isValid;
 }
 
-function showSnackbar(message) {
-    let snackbar = document.getElementById("snackbar");
+function showSnackbar(message, isSuccess) {
+    var snackbar = document.getElementById("snackbar");
     snackbar.textContent = message;
-    snackbar.className = "show"; 
+    snackbar.className = "";
+    if (isSuccess) {
+      snackbar.classList.add("show", "success");
+    } else {
+      snackbar.classList.add("show", "error");
+    }
 
     setTimeout(function() {
         snackbar.className = snackbar.className.replace("show", "");
+        firstNameError.textContent = "";
+        lastNameError.textContent = "";
+        phoneError.textContent = "";
+        emailError.textContent = "";
+        passwordError.textContent = "";
     }, 3000);
-}
+};
+
 function saveData() {
     let formData = {
         firstName: firstName.value,
@@ -70,7 +81,7 @@ function saveData() {
 
     
     displayStoredData();
-}
+};
 function displayStoredData() {
     let storedDataArray = JSON.parse(localStorage.getItem("formDataList")) || [];
     let tableBody = document.querySelector("#data-table tbody");

@@ -8,16 +8,15 @@ body{
 .wrapper {
   display: flex;
   flex-direction: row;
-  height: 100vh;
+  height: 100%; 
   padding: 20px;
   gap: 20px;
   box-sizing: border-box;
   justify-content: center;
-  align-items: center;     
+  align-items: stretch;     
 }
 
 .form-container, .data-container {
-  height: 100% ;
   flex: 1;
   background-color: #f9f9f9;
   padding: 20px;
@@ -25,9 +24,8 @@ body{
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   box-sizing: border-box;
   display: flex;
-  flex-direction: column; 
+  flex-direction: column;
 }
-
 input[type="text"], input[type="password"] {
   width: 100%;
   padding: 10px;
@@ -36,13 +34,46 @@ input[type="text"], input[type="password"] {
   border-radius: 4px;
   box-sizing: border-box;
 }
+
 form p {
   margin-bottom: 15px; 
 }
 
-.form-container {
-  max-width: 100%; 
+.error{
+  color: red;
+    font-size: 12px;
 }
+#snackbar {
+  visibility: hidden;
+  min-width: 250px;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  border-radius: 2px;
+  padding: 16px;
+  position: fixed;
+  z-index: 1;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 30px;
+  font-size: 17px;
+}
+
+#snackbar.show {
+  visibility: visible;
+  -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+#snackbar.success {
+  background-color: green;
+  color: white;
+}
+#snackbar.error {
+  background-color: red;
+  color: white;
+}
+
 .table-responsive {
   width: 100%;
   overflow-x: auto; 
@@ -50,7 +81,8 @@ form p {
 
 table {
   width: 100%;
-    border-collapse: collapse;
+  border-collapse: collapse;
+  table-layout: auto;
 }
 
 table th, table td {
@@ -77,6 +109,7 @@ button {
 button:hover {
   background-color: #0056b3;
 }
+
 
 @media (max-width: 768px) {
   .wrapper {
