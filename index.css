@@ -12,33 +12,45 @@ body{
   padding: 20px;
   gap: 20px;
   box-sizing: border-box;
+  justify-content: center;
+  align-items: center;     
 }
 
 .form-container, .data-container {
+  height: 100% ;
   flex: 1;
   background-color: #f9f9f9;
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
   display: flex;
-  flex-direction: column;
+  flex-direction: column; 
+}
+
+input[type="text"], input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+form p {
+  margin-bottom: 15px; 
 }
 
 .form-container {
-  justify-content: space-between;
+  max-width: 100%; 
 }
-
-button {
-  align-self: flex-end;
-}
-
-.data-container {
-  justify-content: flex-start;
+.table-responsive {
+  width: 100%;
+  overflow-x: auto; 
 }
 
 table {
   width: 100%;
-  border-collapse: collapse;
+    border-collapse: collapse;
 }
 
 table th, table td {
@@ -50,32 +62,6 @@ table th, table td {
 table th {
   background-color: #ccc;
   color: white;
-}
-
-table td {
-  background-color: #fff;
-}
-
-h1, h2 {
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-form p {
-  margin-bottom: 15px;
-}
-
-label {
-  font-weight: bold;
-}
-
-input[type="text"], input[type="password"] {
-  width: 100%;
-  padding: 10px;
-  margin-top: 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
 }
 
 button {
@@ -92,42 +78,17 @@ button:hover {
   background-color: #0056b3;
 }
 
-.error {
-  color: red;
-  font-size: 12px;
-}
-
-#snackbar {
-  visibility: hidden;
-  min-width: 250px;
-  background-color: red;
-  color: #fff;
-  text-align: center;
-  border-radius: 2px;
-  padding: 16px;
-  position: fixed;
-  z-index: 1;
-  left: 50%;
-  transform: translateX(-50%);
-  bottom: 30px;
-  font-size: 17px;
-}
-
-#snackbar.show {
-  visibility: visible;
-}
-
-#snackbar.success {
-  background-color: green;
-}
 @media (max-width: 768px) {
   .wrapper {
     flex-direction: column;
     height: auto;
+    justify-content: center; 
+    align-items: center;
   }
 
   .form-container, .data-container {
     width: 100%;
+    max-width: 500px;  
     margin-bottom: 20px;
   }
 
@@ -147,14 +108,18 @@ button:hover {
     font-size: 14px;
   }
 }
+
 @media (max-width: 480px) {
   .wrapper {
     padding: 10px;
-    gap:5 px;
+    gap: 5px;
+    justify-content: center; 
+    align-items: center;
   }
 
   .form-container, .data-container {
     padding: 10px;
+    max-width: 100%;
   }
 
   input[type="text"], input[type="password"] {
@@ -163,6 +128,15 @@ button:hover {
 
   h1, h2 {
     font-size: 18px;
+  }
+  .table-responsive {
+    overflow-x: auto; 
+  }
+
+  table {
+    width: 100%;
+    max-width: 100%;
+    border-collapse: collapse;
   }
 
   table th, table td {
@@ -174,3 +148,4 @@ button:hover {
     padding: 10px;
   }
 }
+

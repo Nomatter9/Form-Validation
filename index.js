@@ -71,8 +71,6 @@ function saveData() {
     
     displayStoredData();
 }
-
-
 function displayStoredData() {
     let storedDataArray = JSON.parse(localStorage.getItem("formDataList")) || [];
     let tableBody = document.querySelector("#data-table tbody");
