@@ -49,7 +49,7 @@ form p {
   background-color: #333;
   color: #fff;
   text-align: center;
-  border-radius: 2px;
+  border-radius: 5px;
   padding: 16px;
   position: fixed;
   z-index: 1;
@@ -142,12 +142,8 @@ button:hover {
 
   table th, table td {
     font-size: 14px;
-    border: 3px solid #ddd;
   }
-  table th {
-    background-color: #ccc;
-    color: white;
-  }
+
 }
 
 @media (max-width: 480px) {
